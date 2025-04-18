@@ -1,6 +1,6 @@
 <style>
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap'); /* Added Roboto Mono */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap');
 
   :root {
     --background-color: #1F1F1F; /* Very dark grey */
@@ -41,7 +41,6 @@
   }
 
   .controls {
-    /* text-align: center; <-- Removed */
     margin-bottom: 40px;
     display: flex;            /* Use flexbox */
     justify-content: center;  /* Center buttons horizontally */
@@ -52,7 +51,6 @@
 
   .controls button {
     padding: 10px 24px;
-    /* margin: 0 8px; <-- Removed, using gap on parent now */
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -63,7 +61,6 @@
     background-color: var(--button-primary-bg); /* Default to primary, will be overridden */
     color: var(--button-primary-text);
     box-shadow: var(--shadow-dp2);
-    /* Updated Transition to include transform */
     transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease-out;
     outline: none;
     flex-shrink: 0; /* Prevent buttons from shrinking weirdly in flex row */
