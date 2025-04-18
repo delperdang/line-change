@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="lineChangeApp">
+  <head>
+    <base target="_top">
+    <title>Line Change Timer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <?!= include('Stylesheet'); ?>
+  </head>
+  <body ng-controller="TimerController as ctrl">
+
+    <h1>Line Change Timer</h1>
+
+    <div class="controls">
+      <button ng-click="ctrl.startGame()" ng-disabled="ctrl.isGameRunning">Start Game</button>
+      <button ng-click="ctrl.pauseGame()" ng-disabled="!ctrl.isGameRunning">Pause Game</button>
+      <button ng-click="ctrl.resetGame()">Reset Game</button>
+    </div>
+
+    <div class="player-container">
+      <div class="player-circle" 
+           ng-repeat="player in ctrl.players track by player.id" 
+           ng-class="{ 'active': player.isActive }" 
+           ng-click="ctrl.togglePlayer(player)">
+
+        <div class="player-name">{{ player.name }}</div>
+        <div class="timer current-timer">
+          {{ ctrl.formatTime(player.currentSessionDisplayTime) }}
+        </div>
+        <div class="timer total-timer">
+           ({{ ctrl.formatTime(player.totalGameTime + (player.isActive && ctrl.isGameRunning ? ctrl.getCurrentSessionElapsed(player) : 0)) }})
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var serverData = {
+        playerNames: <?!= playerNames ?> || [] // Use server-injected data or default to empty array
+      };
+    </script>
+
+    <?!= include('JavaScript'); ?>
+
+  </body>
+</html>
