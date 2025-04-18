@@ -3,7 +3,7 @@
  */
 function doGet(e) {
   // Fetch player names from Script Properties
-  var playerNamesString = PropertiesService.getScriptProperties().getProperty('playerNames');
+  var playerNamesString = PropertiesService.getScriptProperties().getProperty('PLAYER_NAMES');
 
   // Provide default if property is not set
   if (!playerNamesString) {
