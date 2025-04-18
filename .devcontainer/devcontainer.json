@@ -1,0 +1,14 @@
+{
+	"name": "Node.js & Clasp",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
+	"postCreateCommand": "sudo npm install -g @google/clasp; git config --global user.email 'steve.delperdang@gmail.com'; git config --global user.name 'delperdang'",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"googlecloudtools.cloudcode"
+			]
+		}
+	}
+}
