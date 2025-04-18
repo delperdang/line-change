@@ -17,13 +17,13 @@ function doGet(e) {
 
   // Create an HTML template from Index.html
   var template = HtmlService.createTemplateFromFile('Index');
-  
+
   // Pass the player names array to the template (as a JSON string)
   template.playerNames = JSON.stringify(playerNamesArray);
 
   // Evaluate the template and serve the HTML
   return template.evaluate()
-      .setTitle('Soccer Player Timer')
+      .setTitle('Line Change Timer')
       .addMetaTag('viewport', 'width=device-width, initial-scale=1') // For mobile responsiveness
       .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.DEFAULT); 
 }
